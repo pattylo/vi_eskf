@@ -209,36 +209,3 @@ Sophus::Vector6d BLUEROV2_STATES::ImuDoNodelet::dynamics_g(
         0
     ).finished();
 }
-
-void BLUEROV2_STATES::ImuDoNodelet::thrusts_cb(
-    const uuv_gazebo_ros_plugins_msgs::FloatStamped::ConstPtr& msg, 
-    int index
-)
-{
-    double input = msg->data;
-    // ROS_INFO("Received input for thruster %d: %f", index, input);
-    switch (index)
-    {
-        case 0:
-            current_th(0) = input;
-            break;
-        case 1:
-            current_th(1) = input;
-            break;
-        case 2:
-            current_th(2) = input;
-            break;
-        case 3:
-            current_th(3) = input;
-            break;
-        case 4:
-            current_th(4) = input;
-            break;
-        case 5:
-            current_th(5) = input;
-            break;
-        default:
-            ROS_WARN("Invalid thruster index: %d", index);
-            break;
-    }
-}

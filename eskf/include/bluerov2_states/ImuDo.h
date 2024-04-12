@@ -34,9 +34,9 @@
 
 #include <ros_utilities/ros_utilities.h>
 
-#include "airo_message/Disturbance.h"
-#include "airo_message/ReferencePreview.h"
-#include "uuv_gazebo_ros_plugins_msgs/FloatStamped.h"
+// #include "airo_message/Disturbance.h"
+// #include "airo_message/ReferencePreview.h"
+// #include "uuv_gazebo_ros_plugins_msgs/FloatStamped.h"
 
 // map definition for convinience
 #define COLOR_SUB_TOPIC CAMERA_SUB_TOPIC_A
@@ -75,7 +75,7 @@ namespace BLUEROV2_STATES
 
         std_msgs::Bool pub_data;
 
-        airo_message::Disturbance esti_dist;
+        // airo_message::Disturbance esti_dist;
 
         // vehicle states
         Sophus::SE3d vehicle_SE3_world_gt;
@@ -117,10 +117,10 @@ namespace BLUEROV2_STATES
 
         Sophus::Vector6d imu_raw_B;
 
-        void thrusts_cb(
-            const uuv_gazebo_ros_plugins_msgs::FloatStamped::ConstPtr& msg, 
-            int index
-        ); // read current thrusts
+        // void thrusts_cb(
+        //     const uuv_gazebo_ros_plugins_msgs::FloatStamped::ConstPtr& msg, 
+        //     int index
+        // ); // read current thrusts
         // thrust current_th;
         Sophus::Vector6d current_th;
         std::vector<ros::Subscriber> th_subs;

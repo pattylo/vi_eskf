@@ -82,12 +82,12 @@ void BLUEROV2_STATES::ImuDoNodelet::EskfProcess(
 
     raw_xi = vehicle_SE3_world_gt.rotationMatrix().inverse() * Eigen::Vector3d(40, 40, 10);
 
-    esti_dist.disturb.linear.x = raw_xi.x();
-    esti_dist.disturb.linear.y = raw_xi.y();
-    esti_dist.disturb.linear.z = raw_xi.z();
+    // esti_dist.disturb.linear.x = raw_xi.x();
+    // esti_dist.disturb.linear.y = raw_xi.y();
+    // esti_dist.disturb.linear.z = raw_xi.z();
 
     // if((xi_est_I - raw_xi).norm() < 10.0)
-        esti_dist_pub.publish(esti_dist);
+        // esti_dist_pub.publish(esti_dist);
     
     index_lala ++;
     // if(index_lala >= 100)

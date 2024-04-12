@@ -78,9 +78,9 @@ target_link_libraries(ImuDo
     ${Sophus_INCLUDE_DIRS}
 )
 
-add_dependencies(ImuDo 
-    airo_message_generate_messages_cpp
-)
+# add_dependencies(ImuDo 
+#     # airo_message_generate_messages_cpp
+# )
 
 
 ####################################

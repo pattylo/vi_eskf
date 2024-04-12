@@ -13,14 +13,14 @@ void BLUEROV2_STATES::ImuDoNodelet::communi_config(ros::NodeHandle& nh)
 
     for (int i = 0; i < 6; i++)
     {
-        std::string topic = "/bluerov2/thrusters/" + std::to_string(i) + "/thrust";
-        th_subs.emplace_back(
-            nh.subscribe<uuv_gazebo_ros_plugins_msgs::FloatStamped>(
-                topic, 
-                20, 
-                boost::bind(&ImuDoNodelet::thrusts_cb, this, _1, i)
-            )
-        );
+        // std::string topic = "/bluerov2/thrusters/" + std::to_string(i) + "/thrust";
+        // th_subs.emplace_back(
+        //     nh.subscribe<uuv_gazebo_ros_plugins_msgs::FloatStamped>(
+        //         topic, 
+        //         20, 
+        //         boost::bind(&ImuDoNodelet::thrusts_cb, this, _1, i)
+        //     )
+        // );
     }
 
     main_spin_timer = nh.createTimer(
@@ -34,8 +34,8 @@ void BLUEROV2_STATES::ImuDoNodelet::communi_config(ros::NodeHandle& nh)
     imu_pub = nh.advertise<std_msgs::Bool>
                 ("/dummy_imu", 1);
 
-    esti_dist_pub = nh.advertise<airo_message::Disturbance>
-                ("/disturbance", 1);
+    // esti_dist_pub = nh.advertise<airo_message::Disturbance>
+    //             ("/disturbance", 1);
 
     xi_pub = nh.advertise<geometry_msgs::Point>
                 ("/xi", 1);
